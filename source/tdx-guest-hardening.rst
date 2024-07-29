@@ -26,6 +26,8 @@ specific to a concrete deployment scenario. To facilitate this process,
 we have developed a hardening methodology and tools that are explained
 below.
 
+Intel® Trust Domain Extension（Intel® TDX）技术的主要安全目标是消除客户虚拟机（VM）对宿主机和虚拟机管理器（VMM）的信任需求。然而，它本身无法保护客户虚拟机免受利用宿主/VMM与客户之间现有基于半虚拟化的通信接口（如 MMIO、端口 I/O 等）的攻击。为了防御此类攻击，客户虚拟机软件栈需要加固，以安全地处理来自宿主/VMM的不可信且可能恶意的输入。这种加固工作应用于客户软件栈中的一组具体软件组件（虚拟 BIOS、引导加载程序、Linux* 内核和用户空间），这些组件特定于具体的部署场景。为了促进这一过程，我们开发了一种加固方法和工具，下面将进行说明。
+
 The hardening approach presented in this document is by no means an
 ultimate guarantee of 100% security against the above-mentioned attacks,
 but merely a methodology built to our best knowledge and resource
@@ -34,6 +36,8 @@ Linux TDX MVP software stack (https://github.com/intel/tdx-tools)
 to the trust domain (TD) guest Linux kernel and hardened many involved
 kernel subsystems. This guide is written with the Linux kernel in mind,
 but the outlined principles can be applied to any software component.
+
+本文档中介绍的加固方法绝不是针对上述攻击提供100%安全保障的最终保证，而仅仅是根据我们所掌握的最佳知识和资源限制构建的一种方法论。在我们的环境中，我们已经成功地将其应用于Linux TDX MVP软件栈（https://github.com/intel/tdx-tools）到信任域（TD）客户Linux内核，并加固了许多涉及的内核子系统。本指南是以Linux内核为中心编写的，但概述的原则可应用于任何软件组件。
 
 The overall threat model and security architecture for the TD guest
 kernel is described in the :ref:`security-spec` and it is
