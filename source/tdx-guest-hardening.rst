@@ -5,7 +5,7 @@ Intel® Trust Domain Extension Guest Linux Kernel Hardening Strategy
 
 Contributors:
 
-Elena Reshetova, Tamas Lengyel, Sebastian Osterlund, Steffen Schulz， Wenhui Zhang
+Elena Reshetova, Tamas Lengyel, Sebastian Osterlund, Steffen Schulz, Wenhui Zhang
 
 
 Purpose and Scope
